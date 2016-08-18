@@ -86,6 +86,15 @@ services:
     # volumes:
     #   - db-data:/opt/mysql
 
+  postgis:
+    image: biggis/postgis:9.5.4
+    restart: always
+    hostname: postgis
+    ports:
+      - 5432:5432
+    volumes:
+      - postgis-data:/var/lib/postgres/data
+  
 volumes:
   # zookeeper-data:
   # kafka-data:
@@ -95,3 +104,4 @@ volumes:
   # hstiles:
   tiles:
   flink-conf:
+  postgis-data:
